@@ -1,0 +1,31 @@
+// =========================================================
+// layout/_header.scss
+// =========================================================
+
+@use '../abstracts/variables' as v;
+
+.header-container {
+  background: var(--primary);
+  padding: v.space(30) v.space(15) 0;
+}
+
+.header-title {
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: #fbf5e8;
+}
+
+.header-subtitle {
+  max-width: 780px;
+  margin: v.space(4) auto v.space(18);
+  color: #d6c9a8;
+  font-size: 1rem;
+}
+
+.nav-bar {
+  max-width: 780px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(251, 245, 232, 0.18);
+}

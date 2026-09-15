@@ -1,0 +1,14 @@
+{
+  "name": "portofolio-dhany-rolas-scss",
+  "version": "1.0.0",
+  "description": "Konversi CSS ke SCSS (7-1 pattern) — Tugas Rutin 4",
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "build:css": "sass scss/main.scss dist/style.css --no-source-map --style=expanded"
+},
+  "devDependencies": {
+    "sass": "^1.103.1",
+    "vite": "^8.3.0"
+  }
+}

@@ -1,0 +1,13 @@
+// =========================================================
+// base/_root.scss
+// Custom property warna di :root, digenerate otomatis dari
+// map $colors-light lewat @each (memenuhi requirement loop).
+// =========================================================
+
+@use '../abstracts/variables' as v;
+
+:root {
+  @each $name, $value in v.$colors-light {
+    --#{$name}: #{$value};
+  }
+}

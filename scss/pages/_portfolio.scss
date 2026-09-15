@@ -1,0 +1,9 @@
+// =========================================================
+// pages/_portfolio.scss
+// Penyesuaian spesifik untuk halaman portofolio ini saja
+// (bukan komponen umum yang dipakai berulang).
+// =========================================================
+
+#tentang-saya .card-text {
+  overflow: auto;
+}

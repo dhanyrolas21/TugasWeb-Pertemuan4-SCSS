@@ -1,0 +1,96 @@
+// =========================================================
+// components/_forms.scss
+// =========================================================
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+#kontak {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--highlight);
+  padding: v.space(20);
+  @include m.count-section(bagian);
+
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: v.space(5);
+    @include m.flex($align: baseline, $gap: 0.6rem);
+    @include m.section-number(bagian);
+  }
+
+  > .wrap > p {
+    color: var(--ink-dim);
+    margin-bottom: v.space(15);
+    max-width: 60ch;
+  }
+}
+
+form {
+  display: grid;
+  gap: v.space(12);
+  max-width: 640px;
+}
+
+.row2 {
+  display: grid;
+  gap: v.space(12);
+
+  @include m.respond-min(row2) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field {
+  @include m.flex($direction: column, $gap: 0.4rem);
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+input,
+select,
+textarea {
+  font-family: v.$font-body;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--bg);
+  border: none;
+  border-bottom: 1.5px solid var(--line);
+  border-radius: 2px 2px 0 0;
+  padding: v.space(55) v.space(6);
+  transition: border-color 0.15s ease, background 0.15s ease;
+
+  &:hover {
+    background: #ffffff;
+  }
+
+  &:focus {
+    border-color: var(--highlight);
+    background: #ffffff;
+    outline: none;
+  }
+}
+
+textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+input[type="date"] {
+  cursor: pointer;
+}
+
+small {
+  color: var(--ink-dim);
+  font-size: 0.78rem;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--ink-dim);
+}

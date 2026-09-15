@@ -1,0 +1,23 @@
+// =========================================================
+// themes/_dark.scss
+// Override warna dark mode, digenerate dari $colors-dark
+// lewat @each (loop kedua di proyek ini).
+// =========================================================
+
+@use '../abstracts/variables' as v;
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @each $name, $value in v.$colors-dark {
+      --#{$name}: #{$value};
+    }
+  }
+
+  .header-container {
+    background: #0f1f30;
+  }
+
+  button[type="submit"] {
+    color: #1c1712;
+  }
+}

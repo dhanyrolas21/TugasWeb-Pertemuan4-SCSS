@@ -1,0 +1,26 @@
+// =========================================================
+// layout/_grid.scss
+// Struktur grid utama halaman (area main + sidebar).
+// =========================================================
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.layout-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.space(25);
+  max-width: 900px;
+  margin: v.space(30) auto;
+  padding: 0 v.space(15);
+  align-items: start;
+  counter-reset: bagian;
+
+  @include m.respond-min(layout) {
+    grid-template-columns: 2.6fr 1fr;
+  }
+}
+
+.main-content {
+  @include m.flex($direction: column, $gap: v.space(30));
+}

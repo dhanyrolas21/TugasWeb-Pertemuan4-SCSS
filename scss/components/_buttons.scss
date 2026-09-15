@@ -1,0 +1,24 @@
+// =========================================================
+// components/_buttons.scss
+// =========================================================
+
+@use '../abstracts/variables' as v;
+
+button[type="submit"] {
+  justify-self: start;
+  background: var(--highlight);
+  color: #fdfcf8;
+  border: none;
+  padding: v.space(75) v.space(17);
+  border-radius: 2px;
+  font-family: v.$font-body;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: #8f3323;
+  }
+}

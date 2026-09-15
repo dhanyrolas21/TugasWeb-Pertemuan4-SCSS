@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Landing page portofolio pribadi mahasiswa Ilmu Komputer UNIMED.">
+    <title>Portofolio Pribadi | Dhany Rolas</title>
+    <script type="module" src="./scss/main.scss"></script>
+</head>
+<body>
+
+    
+    <header class="header-container">
+        <h1 class="header-title"> Portofolio Dhany Rolas</h1>
+        <p class="header-subtitle">Mahasiswa Ilmu Komputer UNIMED </p>
+        <nav class="nav-bar">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#tentang-saya" class="nav-link">Tentang</a></li>
+                <li class="nav-item"><a href="#proyek-saya" class="nav-link">Proyek</a></li>
+                <li class="nav-item"><a href="#kontak-saya" class="nav-link">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <div class="layout-container">
+        
+        <main class="main-content">
+            
+            <section id="tentang-saya" class="card-box">
+                <h2 class="card-title">Tentang Saya</h2>
+                <figure class="profile-box">
+                   <img src="foto-profil-dhany.jpg" alt="Foto profil Dhany Rolas" class="profile-img" width="150">
+                    <br><br>
+                    <figcaption class="profile-caption">Foto Profil Saya</figcaption>
+                </figure>
+                <p class="card-text">
+                    Saya seorang Mahasiswa Ilmu Komputer Universitas Negeri Medan Semester 3 yang tertarik pada dunia teknologi dan pemrograman web.
+                </p>
+            </section>
+
+            <section id="proyek-saya" class="card-box">
+                <h2 class="card-title">Proyek Saya</h2>
+                <!-- Sesudah (Dipisah rapi) -->
+            <article class="project-item">
+            <h3 class="project-title">Website Estimasi Emisi CO₂ di Lampu Merah Kota Medan dengan Pendekatan Integral tentu dan Teknik Pecahan Parsial</h3>
+            <p class="project-desc">Project Website ini mengestimasi emisi CO₂ kendaraan saat berhenti di lampu merah Kota Medan menggunakan pendekatan integral tentu.</p>
+            </article>
+            <br>
+            <article class="project-item">
+            <h3 class="project-title">Analisis Kuantitatif Laju Perubahan Indeks UV sebagai Dasar Penetapan Strategi Proteksi yang Optimal</h3>
+            <p class="project-desc">Project Website ini menganalisis perubahan Indeks UV untuk menentukan strategi proteksi yang optimal.</p>
+            </article>
+            
+        </section>
+
+            <section id="kontak">
+      <div class="wrap">
+        <h2>Hubungi Saya</h2>
+        <p>Punya proyek atau ingin berkolaborasi? Isi formulir di bawah, saya akan membalas secepatnya.</p>
+
+        <form action="#" method="post" novalidate>
+          <div class="row2">
+            <div class="field">
+              <label for="nama">Nama lengkap</label>
+              <input type="text" id="nama" name="nama" required minlength="3" autocomplete="name">
+            </div>
+            <br> 
+            <div class="field">
+              <label for="email">Alamat email</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+          </div>
+          <br>
+
+          <div class="field">
+            <label for="subjek">Subjek</label>
+            <select id="subjek" name="subjek" required>
+              <option value="" disabled selected>Pilih topik</option>
+              <option value="kolaborasi">Ajakan kolaborasi</option>
+              <option value="freelance">Proyek freelance</option>
+              <option value="lainnya">Lainnya</option>
+            </select>
+          </div>
+          <br>
+
+          <div class="row2">
+            <div class="field">
+              <label for="tanggal">Tanggal mulai proyek</label>
+              <input type="date" id="tanggal" name="tanggal">
+            </div>
+            <br>
+
+          <div class="field">
+            <br>
+            <div class="field">
+                 <label for="pesan">Pesan</label>
+    
+                <textarea 
+                id="pesan" 
+                name="pesan" 
+                rows="6"
+                minlength="10" 
+                required
+                placeholder="Ceritakan sedikit tentang proyek Anda..."
+            ></textarea>
+
+        <small>Minimal 10 karakter</small>
+</div>
+
+          <br>
+          <button type="submit">Kirim pesan</button>
+          <p class="hint">Kolom bertanda wajib akan divalidasi sebelum pesan terkirim.</p>
+        </form>
+      </div>
+    </section>
+
+        </main>
+      
+       <aside aria-label="Sedang dipelajari">
+          <h2>Sedang saya pelajari</h2>
+          <ul>
+            <li>HTML 5</li>
+            <li>CSS 3</li>
+            <li>Java Script</li>
+            <li>Dasar PHP</li>
+            <li>Dasar Laravel</li>
+          </ul>
+        </aside>
+
+    </div>
+    
+    <footer class="footer-container">
+        <p>&copy; <time datetime="2026">2026</time>  Dhany Rolas. Dibuat dengan HTML5 semantik.</p>
+    </footer>
+
+</body>
+</html>

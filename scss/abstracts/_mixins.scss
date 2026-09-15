@@ -1,0 +1,70 @@
+// =========================================================
+// abstracts/_mixins.scss
+// Mixin reusable dipakai di seluruh partial lain.
+// =========================================================
+
+@use 'sass:map';
+@use 'variables' as v;
+
+/// 1. Flexbox helper — dipakai di nav-list, main-content, field, dll.
+///    Hanya menghasilkan properti yang benar-benar diisi (tidak
+///    menambahkan nilai default yang tidak ada pada CSS asli).
+@mixin flex($direction: null, $gap: 0, $align: null, $justify: null) {
+  display: flex;
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+/// 2. Media query min-width berdasarkan nama breakpoint di $breakpoints
+@mixin respond-min($name) {
+  @media (min-width: map.get(v.$breakpoints, $name)) {
+    @content;
+  }
+}
+
+/// 3. Media query max-width berdasarkan nama breakpoint di $breakpoints
+@mixin respond-max($name) {
+  @media (max-width: map.get(v.$breakpoints, $name)) {
+    @content;
+  }
+}
+
+/// 4. Gaya fokus konsisten untuk aksesibilitas
+@mixin focus-ring {
+  outline: 2px solid var(--highlight);
+  outline-offset: 3px;
+}
+
+/// 5. Menambah counter pada elemen pembungkus section (tidak menampilkan angka)
+@mixin count-section($name) {
+  counter-increment: $name;
+}
+
+/// 6. Menampilkan angka urut section lewat ::before (dipakai di judul section)
+@mixin section-number($name, $letter-spacing: null) {
+  &::before {
+    content: counter(#{$name}, decimal-leading-zero);
+    font-family: v.$font-body;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--highlight);
+
+    @if $letter-spacing {
+      letter-spacing: $letter-spacing;
+    }
+  }
+}

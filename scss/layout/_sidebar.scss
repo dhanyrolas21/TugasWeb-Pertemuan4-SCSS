@@ -1,0 +1,49 @@
+// =========================================================
+// layout/_sidebar.scss
+// =========================================================
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+aside {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--secondary);
+  padding: v.space(16) v.space(15);
+  align-self: start;
+
+  @include m.respond-min(layout) {
+    position: sticky;
+    top: v.space(15);
+  }
+
+  h2 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: v.space(9);
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    gap: v.space(6);
+  }
+
+  li {
+    font-size: 0.9rem;
+    color: var(--ink-dim);
+    padding-left: v.space(13);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      background: var(--secondary);
+      border-radius: 50%;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+// =========================================================
+// main.scss — Portofolio Dhany Rolas
+// Entry point 7-1 pattern. Compile dengan Dart Sass / Vite.
+//
+// Urutan @use sengaja dijaga sama seperti urutan aturan pada
+// style.css versi sebelumnya, supaya urutan output CSS
+// (dan hasil akhirnya) identik dengan versi sebelum SCSS.
+// =========================================================
+
+// 1. Vendors — resource pihak ketiga
+@use 'vendors/fonts';
+
+// 2. Base — reset, custom property warna, tipografi dasar
+@use 'base/root';
+@use 'base/reset';
+@use 'base/typography';
+
+// 3. Layout — struktur besar halaman
+@use 'layout/header';
+@use 'layout/grid';
+@use 'layout/sidebar';
+@use 'layout/footer';
+
+// 4. Components — potongan UI yang bisa dipakai ulang
+@use 'components/navigation';
+@use 'components/cards';
+@use 'components/project-list';
+@use 'components/forms';
+@use 'components/buttons';
+
+// 5. Pages — penyesuaian spesifik satu halaman
+@use 'pages/portfolio';
+
+// 6. Themes — override tema (dark mode), diletakkan terakhir
+//    supaya tetap punya prioritas urutan tertinggi.
+@use 'themes/dark';

@@ -1,0 +1,58 @@
+// =========================================================
+// components/_project-list.scss
+// =========================================================
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+#proyek-saya {
+  counter-reset: proyek;
+}
+
+.project-item {
+  position: relative;
+  padding: v.space(14) 0 v.space(14) v.space(30);
+  border-top: 1px solid var(--line);
+  @include m.count-section(proyek);
+
+  &:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  &::before {
+    content: counter(proyek, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: v.space(14);
+    font-family: v.$font-heading;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--secondary);
+    opacity: 0.55;
+  }
+
+  @include m.respond-max(row2) {
+    padding-left: v.space(25);
+
+    &::before {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.project-item:first-of-type::before {
+  top: 0;
+}
+
+.project-title {
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin-bottom: v.space(5);
+  line-height: 1.35;
+}
+
+.project-desc {
+  color: var(--ink-dim);
+  max-width: 62ch;
+}

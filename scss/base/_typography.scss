@@ -1,0 +1,22 @@
+// =========================================================
+// base/_typography.scss
+// =========================================================
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+h1,
+h2,
+h3 {
+  font-family: v.$font-heading;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+a {
+  color: var(--primary);
+}
+
+:focus-visible {
+  @include m.focus-ring;
+}
